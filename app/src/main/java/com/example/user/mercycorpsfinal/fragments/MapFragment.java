@@ -425,26 +425,26 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     @Override
     public void onResume() {
         super.onResume();
-        final Handler handler = new Handler();
-        final Runnable task = new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    if (isInternetAvailable()){
-                        internetAvailable();
-                        Log.e(TAG, "run: " );
-                    }
-                } catch (IOException e) {
-
-                } catch (InterruptedException e) {
-
-                }
-                //code you want to run every second
-
-            }
-        };
-        handler.postDelayed(task, 1000);
-        task.run();
+//        final Handler handler = new Handler();
+//        final Runnable task = new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    if (isInternetAvailable()){
+//                        internetAvailable();
+//                        Log.e(TAG, "run: " );
+//                    }
+//                } catch (IOException e) {
+//
+//                } catch (InterruptedException e) {
+//
+//                }
+//                //code you want to run every second
+//
+//            }
+//        };
+//        handler.postDelayed(task, 1000);
+//        task.run();
 
 
 

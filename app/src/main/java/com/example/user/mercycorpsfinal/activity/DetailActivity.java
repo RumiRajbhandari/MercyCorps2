@@ -42,8 +42,15 @@ public class DetailActivity extends AppCompatActivity {
 
         if(listItem.getMob()!=null && !listItem.getMob().isEmpty()){
             r1.setVisibility(View.VISIBLE);
-            tvDetMobNo.setText(listItem.getMob());
+            int length=listItem.getMob().length();
+            Log.d("lengthValue", String.valueOf(length));
+            if(length==8){
+                tvDetMobNo.setText("+977"+listItem.getMob());
+            }
+            else {
 
+                tvDetMobNo.setText(listItem.getMob());
+            }
             ImgCallBtnMob.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -65,12 +72,16 @@ public class DetailActivity extends AppCompatActivity {
         if(listItem.getLandline()!=null && !listItem.getLandline().isEmpty())
         {
             r2.setVisibility(View.VISIBLE);
+
             tvDetPhoneNo.setText("+977"+listItem.getLandline());
 
             ImgBtnCallPh.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    giveCall("+977"+listItem.getLandline());
+
+                        giveCall("+977"+listItem.getLandline());
+
+
                 }
             });
 
