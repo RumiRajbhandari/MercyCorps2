@@ -31,17 +31,7 @@ public class EWSResponse extends Fragment {
     ListView lv;
     ArrayAdapter<String> adapter;
     View mView;
-    String[] listItems={"जिल्ला विपद् प्रतिकार्य समिति ",
-            "जिल्लास्थित :बकतभच त्चबष्लभच ९:त्० हरुको नाम, निकाय तथा सम्पर्क ",
-    "पूर्व सूचना प्रणाली कार्यदल",
-            "प्राथमिक उपचार कार्यदल",
-            "खोज तथा उद्धार कार्यदल",
-            "क्षेती तथा आबश्यक्ता लेखाजोखा कार्यदल",
-            "प्राथमिक उपचार कार्यदल(नेपाल रेडक्रस सोसाइटी द्वारा गठित गा.वि.स. तथा नगरपालिका स्तरिय कार्यदलहरुको सम्पर्क विवरण)"
-    ,"खोज तथा उद्धार कार्यदल( नेपाल रेडक्रस सोसाइटी द्वारा गठित गा.वि.स. तथा नगरपालिका स्तरिय कार्यदलहरुको सम्पर्क विवरण)"
-            ,"पूर्व सूचना प्रणाली कार्यदल",
-            "वाढी प्रभावित समुदायका ऋम्:ऋ  र  ध्म्:ऋ हरुको सम्पर्क बिवरण"
-    ,"बर्षा मापन केन्द्र"};
+    String[] listItems;
 
     public EWSResponse() {
         // Required empty public constructor
@@ -61,6 +51,7 @@ public class EWSResponse extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        listItems=getResources().getStringArray(R.array.list1);
         lv = (ListView) mView.findViewById(R.id.listView);
         adapter = new ArrayAdapter<String>(getActivity(), R.layout.activity_main_list_item, listItems);
         lv.setAdapter(adapter);
@@ -97,9 +88,7 @@ public class EWSResponse extends Fragment {
                     case 8 :intent = new Intent(getActivity(), Sheet21.class);
                         startActivity(intent);
                         break;
-                    case 9 :intent = new Intent(getActivity(), Sheet3.class);
-                        startActivity(intent);
-                        break;
+
 
 
 

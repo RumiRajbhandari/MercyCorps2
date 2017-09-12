@@ -37,6 +37,7 @@ public class ApatkalinAwasthaActivity extends AppCompatActivity {
         rv.setHasFixedSize(true);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +54,7 @@ public class ApatkalinAwasthaActivity extends AppCompatActivity {
         LinearLayoutManager verticalLayoutmanager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         rv.setLayoutManager(verticalLayoutmanager);
         rv.setItemAnimator(new DefaultItemAnimator());
+        userList=new ArrayList<>();
         fetchDetails();
 
 
@@ -60,7 +62,7 @@ public class ApatkalinAwasthaActivity extends AppCompatActivity {
     private  void  fetchDetails(){
         final MercyCorpInterface apiService = new ApiHelper().getApiWithCaching(getApplicationContext());
 //        MercyCorpInterface apiService = ApiHelper.getClient().create(MercyCorpInterface.class);
-        Call<List<ListItem>> call = apiService.getList2();
+        Call<List<ListItem>> call = apiService.getList1();
         call.enqueue(new Callback<List<ListItem>>() {
             @Override
             public void onResponse(Call<List<ListItem>> call, retrofit2.Response<List<ListItem>> response) {

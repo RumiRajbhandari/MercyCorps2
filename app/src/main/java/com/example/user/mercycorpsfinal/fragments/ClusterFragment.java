@@ -1,6 +1,7 @@
 package com.example.user.mercycorpsfinal.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import com.example.user.mercycorpsfinal.R;
 import com.example.user.mercycorpsfinal.activity.GairSarkariSasthaActivity;
 import com.example.user.mercycorpsfinal.activity.Sheet10;
 import com.example.user.mercycorpsfinal.activity.Sheet11;
+import com.example.user.mercycorpsfinal.activity.Sheet12;
 import com.example.user.mercycorpsfinal.activity.Sheet3;
 import com.example.user.mercycorpsfinal.activity.Sheet6;
 import com.example.user.mercycorpsfinal.activity.Sheet7;
@@ -30,15 +32,7 @@ public class ClusterFragment extends Fragment {
     ListView lv;
     ArrayAdapter<String> adapter;
     View mView;
-    String[] listItems={ "गैर सरकारी संस्था ",
-            "समन्वय तथा सूचना व्यवस्थापन क्षेत्रको सर्म्पर्क व्यक्ति तथा संस्थाको विवरण ",
-            "खाद्य कार्य समुह ",
-            "आवास तथा गैर खाद्यान्न  ",
-            "खानेपानी  सरसफाई तथा स्वास्थ्य पर्रवर्धन क्षेत्रको सर्म्पर्क ",
-            "स्वास्थ्य तथा पोषण क्षेत्रको सर्म्पर्क व्यक्ति तथा संस्थाको विवरण",
-            "संरक्षण क्षेत्रको सम्पर्क व्यक्ति तथा संस्थाको विवरण  ",
-            "शिक्षा क्षेत्रको सम्पर्क व्यक्ति तथा सस्ंथाको विवरण","पूर्नस्थापन तथा पूर्ननिर्माण कार्यदलको विवरण"
-    };
+    String[] listItems;
     public ClusterFragment() {
         // Required empty public constructor
     }
@@ -53,6 +47,7 @@ public class ClusterFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        listItems=getResources().getStringArray(R.array.list);
         lv = (ListView) mView.findViewById(R.id.listView);
         adapter = new ArrayAdapter<String>(getActivity(), R.layout.activity_main_list_item, listItems);
         lv.setAdapter(adapter);
@@ -86,7 +81,7 @@ public class ClusterFragment extends Fragment {
                     case 7 :intent = new Intent(getActivity(), Sheet11.class);
                         startActivity(intent);
                         break;
-                    case 8 :intent = new Intent(getActivity(), Sheet3.class);
+                    case 8 :intent = new Intent(getActivity(), Sheet12.class);
                         startActivity(intent);
                         break;
 

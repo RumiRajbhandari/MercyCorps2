@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MercyCorps</string>
+    <string name="app_name">EWS Pocket Diary</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -7,4 +7,45 @@
     <string name="txt">lhNnf b}=k|=p=;ldlt÷lhNnf k|zf;g sfof{no</string>
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
+    <string name="sheet4_str">विषय क्षेत्रको अगुवा तथा सहयोगी संस्थाको सूचि</string>
+    <string name="sheet5_str">समन्वय तथा सूचना व्यवस्थापन क्षेत्रको सर्म्पर्क व्यक्ति तथा संस्थाको विवरण</string>
+    <string name="sheet6_str">खाद्य कार्य समुह</string>
+    <string name="sheet7_str">आवास तथा गैर खाद्यान्न</string>
+    <string name="sheet8_str">खानेपानी  सरसफाई तथा स्वास्थ्य पर्रवर्धन क्षेत्रको सर्म्पर्क</string>
+    <string name="sheet_str">स्वास्थ्य तथा पोषण क्षेत्रको सर्म्पर्क व्यक्ति तथा संस्थाको विवरण</string>
+    <string name="sheet10_str">संरक्षण क्षेत्रको सम्पर्क व्यक्ति तथा संस्थाको विवरण</string>
+    <string name="sheet11_str">शिक्षा क्षेत्रको सम्पर्क व्यक्ति तथा सस्ंथाको विवरण</string>
+    <string name="sheet12_str">पूर्नस्थापन तथा पूर्ननिर्माण कार्यदलको विवरण</string>
+    <string name="sheet13_str">जिल्ला विपद् प्रतिकार्य समिति</string>
+    <string name="sheet14_str">जिल्लास्थित हरुको नाम Master Trainer (MT), निकाय तथा सम्पर्क</string>
+    <string name="sheet15_str">पूर्व सूचना प्रणली कार्यदल</string>
+    <string name="sheet16_str">प्राथमिक उपचार कार्यदल</string>
+    <string name="sheet17_str">खोज तथा उद्धार कार्यदल</string>
+    <string name="sheet18_str">क्षेती तथा आबश्यक्ता लेखाजोखा कार्यदल</string>
+    <string name="sheet19_str">प्राथमिक उपचार कार्यदल(नेपाल रेडक्रस सोसाइटी द्वारा गठित गा.वि.स. तथा नगरपालिका स्तरिय कार्यदलहरुको सम्पर्क विवरण)</string>
+    <string name="sheet20_str">खोज तथा उद्धार कार्यदल( नेपाल रेडक्रस सोसाइटी द्वारा गठित गा.वि.स. तथा नगरपालिका स्तरिय कार्यदलहरुको सम्पर्क विवरण)</string>
+    <string name="sheet21_str">पूर्व सूचना प्रणाली कार्यदल(नेपाल रेडक्रस सोसाइटी द्वारा गठित गा.वि.स. तथा नगरपालिका स्तरिय कार्यदलहरुको सम्पर्क विवरण)</string>
+    <string-array name="list">
+        <item>@string/sheet4_str</item>
+        <item>@string/sheet5_str</item>
+        <item>@string/sheet6_str</item>
+        <item>@string/sheet7_str</item>
+        <item>@string/sheet8_str</item>
+        <item>@string/sheet_str</item>
+        <item>@string/sheet10_str</item>
+        <item>@string/sheet11_str</item>
+        <item>@string/sheet12_str</item>
+    </string-array>
+    <string-array name="list1">
+        <item>@string/sheet13_str</item>
+        <item>@string/sheet14_str</item>
+        <item>@string/sheet15_str</item>
+        <item>@string/sheet16_str</item>
+        <item>@string/sheet17_str</item>
+        <item>@string/sheet18_str</item>
+        <item>@string/sheet19_str</item>
+        <item>@string/sheet20_str</item>
+        <item>@string/sheet21_str</item>
+
+    </string-array>
 </resources>

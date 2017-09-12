@@ -8,4 +8,5 @@
     <color name="textPrimary">#FFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="tabTextInactive">#000</color>
+    <color name="transparent_red">#CCF44336</color>
 </resources>

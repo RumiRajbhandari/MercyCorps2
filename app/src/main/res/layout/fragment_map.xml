@@ -21,14 +21,27 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableTop="@drawable/settlement"
+        android:drawableTop="@drawable/flood"
         android:id="@+id/btn_settlement"
-        android:text="Settlement"
+        android:text="Flood "
         android:textColor="@color/colorAccent"
         android:background="@color/transparent"
         android:layout_alignTop="@+id/btn_ews"
         android:layout_toEndOf="@+id/btn_ews"
         android:backgroundTint="@color/cardview_dark_background"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/settlement"
+        android:id="@+id/settlement"
+        android:text="Settlement"
+        android:textColor="@color/colorAccent"
+        android:background="@color/transparent"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:layout_alignTop="@+id/btn_settlement"
+        android:layout_toEndOf="@+id/btn_settlement"
+        android:visibility="invisible"/>
+
 
 
 

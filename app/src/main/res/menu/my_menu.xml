@@ -17,17 +17,23 @@
             />
         <item
             android:id="@+id/apatkalin"
-            android:icon="@drawable/callall"
-            android:title="आपतकालिन अवस्थाम"/>
+            android:icon="@drawable/ic_note_black_24dp"
+            android:title="मानवीय सहायतामा संलग्न निकाय"/>
 
         <item
         android:icon="@drawable/ic_assignment_black_24dp"
         android:title="Communication Channel"
         android:id="@+id/commCha"
         />
+        <item
+            android:icon="@drawable/ic_cloud_queue_black_24dp"
+            android:title="Threshold Level"
+            android:id="@+id/threshold"
+            />
     </group>
 
     <item android:id="@+id/AboutUs"
+        android:icon="@drawable/ic_person_black_24dp"
         android:title="About Us"
 
 

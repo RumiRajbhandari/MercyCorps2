@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.user.mercycorpsfinal.Api.ApiHelper;
 import com.example.user.mercycorpsfinal.Api.MercyCorpInterface;
@@ -59,7 +60,11 @@ public class Sheet21 extends AppCompatActivity {
         call.enqueue(new Callback<List<ListItem>>() {
             @Override
             public void onResponse(Call<List<ListItem>> call, retrofit2.Response<List<ListItem>> response) {
-                userList.addAll(response.body());
+                try{
+                    userList.addAll(response.body());
+                }catch (Exception e){
+                    Toast.makeText(Sheet21.this, "Please Connect to Internet", Toast.LENGTH_SHORT).show();
+                }
                 adapter = new CustomAdapterList(userList, new CustomAdapterList.OnItemClickListener() {
                     @Override
                     public void onItemClick(ListItem item) {

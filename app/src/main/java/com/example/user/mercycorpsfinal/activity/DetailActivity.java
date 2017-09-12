@@ -26,13 +26,21 @@ public class DetailActivity extends AppCompatActivity {
     ImageButton ImgBtnCallPh,ImgCallBtnMob,ImgCallBtnMsgPh,ImgCallBtnMsgMob;
     private Toolbar toolbar;
     RelativeLayout r1,r2;
+    String mob1,mob2,landline1,landline2;
+    int length,len;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         initializeViews();
         Intent intent=getIntent();
         r1=(RelativeLayout)findViewById(R.id.r1_mob);
@@ -42,19 +50,29 @@ public class DetailActivity extends AppCompatActivity {
 
         if(listItem.getMob()!=null && !listItem.getMob().isEmpty()){
             r1.setVisibility(View.VISIBLE);
-            int length=listItem.getMob().length();
+             length=listItem.getMob().length();
             Log.d("lengthValue", String.valueOf(length));
             if(length==8){
-                tvDetMobNo.setText("+977"+listItem.getMob());
+                mob1="+977"+listItem.getMob();
+                tvDetMobNo.setText(mob1);
             }
             else {
-
-                tvDetMobNo.setText(listItem.getMob());
+                mob2=listItem.getMob();
+                tvDetMobNo.setText(mob2);
             }
             ImgCallBtnMob.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    giveCalllTo(listItem.getMob());
+                    if(length==8){
+                        giveCalllTo(mob1);
+
+                    }
+                    else {
+
+                        giveCalllTo(mob2);
+
+                    }
+
                 }
             });
                 ImgCallBtnMsgMob.setOnClickListener(new View.OnClickListener() {
@@ -72,14 +90,36 @@ public class DetailActivity extends AppCompatActivity {
         if(listItem.getLandline()!=null && !listItem.getLandline().isEmpty())
         {
             r2.setVisibility(View.VISIBLE);
+           if(listItem.getLandline()!=null &&!listItem.getLandline().isEmpty()){
+               len=listItem.getLandline().length();
+               if(len==8){
+                   landline1="+977"+listItem.getLandline();
+                   tvDetPhoneNo.setText(landline1);
 
-            tvDetPhoneNo.setText("+977"+listItem.getLandline());
+
+               }
+               else{
+                   landline2=listItem.getLandline();
+                   tvDetPhoneNo.setText(landline2);
+               }
+           }
+
+
 
             ImgBtnCallPh.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    if(len==8){
+                        giveCall(landline1);
 
-                        giveCall("+977"+listItem.getLandline());
+                    }
+                    else {
+
+                        giveCall(landline2);
+
+                    }
+
+//                        giveCall("+977"+listItem.getLandline());
 
 
                 }
@@ -88,7 +128,16 @@ public class DetailActivity extends AppCompatActivity {
 //            ImgCallBtnMsgPh.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View view) {
-//                    sendMessage(listItem.getLandline());
+//                    if(length==8){
+//                        sendMessage(landline1);
+//
+//                    }
+//                    else {
+//
+//
+//
+//                    }
+//
 //                }
 //            });
 

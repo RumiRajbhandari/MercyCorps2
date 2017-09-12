@@ -33,13 +33,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.maps.android.data.Feature;
-import com.google.maps.android.data.geojson.GeoJsonLayer;
-import com.google.maps.android.data.kml.KmlContainer;
-import com.google.maps.android.data.kml.KmlLayer;
-import com.google.maps.android.data.kml.KmlMultiGeometry;
-import com.google.maps.android.data.kml.KmlPlacemark;
-import com.google.maps.android.data.kml.KmlPoint;
+
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -61,7 +55,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     public ArrayList<LatLon> latLons;
     public ArrayList<Contact> contacts;
     public Contact contact;
-    public KmlLayer layerRiver,layerSettlement,layerInundation;
+//    public KmlLayer layerRiver,layerSettlement,layerInundation;
     public Button btn_settlement,ews;
     List<Marker> markers;
     List<Marker> markerSettlement;
@@ -133,36 +127,36 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         });
 
 
-        ews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (layerSettlement!=null){
-                    layerSettlement.removeLayerFromMap();
-                }
-                imageOverlay.remove();
-                mgoogleMap.setInfoWindowAdapter(new CustomInfoWindowAdapter(LayoutInflater.from(getContext())));
-                //mgoogleMap.clear();
-
-                for (Marker marker: markers
-                        ) {
-                    marker.setVisible(true);
-                }
-                mgoogleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-                    @Override
-                    public void onInfoWindowClick(Marker marker) {
-                        Log.e("TAG", "onInfoWindowClick: hello"+marker.getId());
-                        String[] str = marker.getId().split("m");
-                        LatLon l1 = latLons.get((Integer.parseInt(str[1]))%37);
-                        Log.e(TAG, "onInfoWindowClick: id is"+(Integer.parseInt(str[1]))%37 );
-
-                        Intent intent=new Intent(getContext(),CallListActivity.class);
-                        intent.putExtra("rumi",(Serializable)l1);
-                        startActivity(intent);
-                    }
-                });
-
-            }
-        });
+//        ews.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (layerSettlement!=null){
+//                    layerSettlement.removeLayerFromMap();
+//                }
+//                imageOverlay.remove();
+//                mgoogleMap.setInfoWindowAdapter(new CustomInfoWindowAdapter(LayoutInflater.from(getContext())));
+//                //mgoogleMap.clear();
+//
+//                for (Marker marker: markers
+//                        ) {
+//                    marker.setVisible(true);
+//                }
+//                mgoogleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+//                    @Override
+//                    public void onInfoWindowClick(Marker marker) {
+//                        Log.e("TAG", "onInfoWindowClick: hello"+marker.getId());
+//                        String[] str = marker.getId().split("m");
+//                        LatLon l1 = latLons.get((Integer.parseInt(str[1]))%37);
+//                        Log.e(TAG, "onInfoWindowClick: id is"+(Integer.parseInt(str[1]))%37 );
+//
+//                        Intent intent=new Intent(getContext(),CallListActivity.class);
+//                        intent.putExtra("rumi",(Serializable)l1);
+//                        startActivity(intent);
+//                    }
+//                });
+//
+//            }
+//        });
 
         //Data prepare
 
@@ -240,25 +234,25 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         return false;
     }
 
-    public void internetAvailable(){
-        try {
-
-            // mgoogleMap.clear();
-            layerSettlement=new KmlLayer(mgoogleMap,R.raw.settlementone,getContext());
-
-        } catch (XmlPullParserException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            layerSettlement.addLayerToMap();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (XmlPullParserException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void internetAvailable(){
+//        try {
+//
+//            // mgoogleMap.clear();
+//            layerSettlement=new KmlLayer(mgoogleMap,R.raw.settlementone,getContext());
+//
+//        } catch (XmlPullParserException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        try {
+//            layerSettlement.addLayerToMap();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (XmlPullParserException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public void prepareEws(){
 
@@ -294,33 +288,33 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
             mgoogleMap.setOnInfoWindowClickListener(this);
 
         }
-        mgoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(28.8318, 80.51835), 10.0f));
-
-        try {
-            layerRiver = new KmlLayer(mgoogleMap, R.raw.majorriver, this.getContext());
-            layerRiver.addLayerToMap();
-
-        } catch (XmlPullParserException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try{
-            layerRiver.setOnFeatureClickListener(new GeoJsonLayer.GeoJsonOnFeatureClickListener() {
-                @Override
-                public void onFeatureClick(Feature feature) {
-                    if (feature!=null){
-                        Log.e(TAG, "onFeatureClick: "+feature.getProperty("name") );
-                        Toast.makeText(getContext(), ""+feature.getProperty("name"), Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                    }
-                }
-            });
-        }catch (Exception e){
-
-        }
+//        mgoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(28.8318, 80.51835), 10.0f));
+//
+//        try {
+//            layerRiver = new KmlLayer(mgoogleMap, R.raw.majorriver, this.getContext());
+//            layerRiver.addLayerToMap();
+//
+//        } catch (XmlPullParserException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        try{
+//            layerRiver.setOnFeatureClickListener(new GeoJsonLayer.GeoJsonOnFeatureClickListener() {
+//                @Override
+//                public void onFeatureClick(Feature feature) {
+//                    if (feature!=null){
+//                        Log.e(TAG, "onFeatureClick: "+feature.getProperty("name") );
+//                        Toast.makeText(getContext(), ""+feature.getProperty("name"), Toast.LENGTH_SHORT).show();
+//                    }
+//                    else {
+//                    }
+//                }
+//            });
+//        }catch (Exception e){
+//
+//        }
     }
 
     public void prepareSettlement(){
@@ -328,7 +322,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         try {
 
             if (isInternetAvailable()){
-                internetAvailable();
+//                internetAvailable();
             }
             else {
                 Toast.makeText(getContext(), "Please connect the internet.", Toast.LENGTH_SHORT).show();

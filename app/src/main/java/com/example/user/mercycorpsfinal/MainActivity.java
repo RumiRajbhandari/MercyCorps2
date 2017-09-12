@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import com.example.user.mercycorpsfinal.activity.AboutUsActivity;
 import com.example.user.mercycorpsfinal.activity.ApatkalinAwasthaActivity;
 import com.example.user.mercycorpsfinal.activity.CommunicationActivity;
+import com.example.user.mercycorpsfinal.activity.ThresholdActivity;
 import com.example.user.mercycorpsfinal.fragments.ClusterFragment;
 import com.example.user.mercycorpsfinal.fragments.DHMFragment;
 import com.example.user.mercycorpsfinal.fragments.EWSResponse;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         setupViewPager(viewPager);
 
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer);
-        img_drawer=(ImageView)drawerLayout.findViewById(R.id.image_view);
+//        img_drawer=(ImageView)drawerLayout.findViewById(R.id.image_view);
 
         navigationView = (NavigationView)findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -79,6 +80,14 @@ public class MainActivity extends AppCompatActivity {
                         intent=new Intent(MainActivity.this, CommunicationActivity.class);
                         startActivity(intent);
                         break;
+                    case R.id.AboutUs:
+                        intent=new Intent(MainActivity.this, AboutUsActivity.class);
+                        startActivity(intent);
+                    case R.id.threshold:
+                        intent=new Intent(MainActivity.this,ThresholdActivity.class);
+                        startActivity(intent);
+
+
 
 
 
@@ -98,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
-                getSupportActionBar().setTitle("PocketDairy");
+                getSupportActionBar().setTitle("EWS Pocket Dairy");
 
             }
         };
@@ -110,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:" + "9849829386"));
+                callIntent.setData(Uri.parse("tel:" + "1155"));
                 if (ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.CALL_PHONE) !=
                         PackageManager.PERMISSION_GRANTED) {
                     return;
@@ -134,13 +143,13 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_menu, menu);
         return true;
-    }
+    }*/
 
-    @Override
+   /* @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
         startActivity(intent);
@@ -148,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
 
 //
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }
 
 class ViewPagerAdapter extends FragmentPagerAdapter {

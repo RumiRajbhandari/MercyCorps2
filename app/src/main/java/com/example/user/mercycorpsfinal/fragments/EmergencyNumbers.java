@@ -43,7 +43,7 @@ public class EmergencyNumbers extends Fragment {
 
         FragmentAdapter adapter = new FragmentAdapter(getChildFragmentManager());
         adapter.addFragment(new Sheet2Fragment(), "आपत्कालिन अवस्थामा");
-        adapter.addFragment(new Sheet3Fragment(), "अत्यन्त जरुरी फोन नम्व");
+        adapter.addFragment(new Sheet3Fragment(), " अत्यन्त जरुरी फोन नम्बर ");
         viewPager.setAdapter(adapter);
 
 

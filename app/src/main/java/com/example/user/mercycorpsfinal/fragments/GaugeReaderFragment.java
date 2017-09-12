@@ -40,7 +40,7 @@ public class GaugeReaderFragment extends Fragment {
 
 
         FragmentAdapter adapter = new FragmentAdapter(getChildFragmentManager());
-        adapter.addFragment(new Sheet26Fragment(), "आपत्कालिन अवस्थामा");
+        adapter.addFragment(new Sheet26Fragment(), "जल मापन केन्द्र");
         adapter.addFragment(new Sheet27Fragment(), "बर्षा मापन केन्द्र");
         viewPager.setAdapter(adapter);
 
