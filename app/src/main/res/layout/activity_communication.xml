@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:id="@+id/imgCommunication"
                 android:src="@drawable/call"
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 android:layout_height="wrap_content"
                 />
         </HorizontalScrollView>
