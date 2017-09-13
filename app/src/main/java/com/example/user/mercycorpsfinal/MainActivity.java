@@ -75,6 +75,16 @@ public class MainActivity extends AppCompatActivity {
                         intent =new Intent(MainActivity.this, ApatkalinAwasthaActivity.class);
                         startActivity(intent);
                         break;
+                    case R.id.dhmTollFree:
+                        Intent callIntent = new Intent(Intent.ACTION_CALL);
+                        callIntent.setData(Uri.parse("tel:" + "1155"));
+                        if (ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.CALL_PHONE) !=
+                                PackageManager.PERMISSION_GRANTED) {
+
+                        }
+                        callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(callIntent);
+                        break;
 
                     case R.id.commCha:
                         intent=new Intent(MainActivity.this, CommunicationActivity.class);
@@ -83,9 +93,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.AboutUs:
                         intent=new Intent(MainActivity.this, AboutUsActivity.class);
                         startActivity(intent);
+                        break;
                     case R.id.threshold:
                         intent=new Intent(MainActivity.this,ThresholdActivity.class);
                         startActivity(intent);
+                        break;
 
 
 
@@ -114,32 +126,17 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:" + "1155"));
-                if (ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.CALL_PHONE) !=
-                        PackageManager.PERMISSION_GRANTED) {
-                    return;
-                }
-                callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(callIntent);
-            }
-        });
-
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
     }
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new MapFragment(), "Map");
-        adapter.addFragment(new EWSResponse(), "EWS Response");
-        adapter.addFragment(new DHMFragment(),"DHM");
-        adapter.addFragment(new EmergencyNumbers(),"Emergency Numbers");
-        adapter.addFragment(new ClusterFragment(),"Clusters");
-        adapter.addFragment(new GaugeReaderFragment(),"Gauge Reader");
+        adapter.addFragment(new MapFragment(), "नक्सा");
+        adapter.addFragment(new EWSResponse(), "पूर्व सूचना प्रणाली प्रतिकार्य  ");
+        adapter.addFragment(new DHMFragment()," जल तथा  मौसम बिज्ञान बिभाग  ");
+        adapter.addFragment(new EmergencyNumbers(),"आपत्कालिन नम्बर");
+        adapter.addFragment(new ClusterFragment(),"क्षेत्रगत समूह ");
+        adapter.addFragment(new GaugeReaderFragment(),"अवलोकन कर्ता");
         viewPager.setAdapter(adapter);
     }
 

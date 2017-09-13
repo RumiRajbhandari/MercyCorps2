@@ -1,7 +1,6 @@
 package com.example.user.mercycorpsfinal.fragments;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,7 +17,6 @@ import com.example.user.mercycorpsfinal.activity.GairSarkariSasthaActivity;
 import com.example.user.mercycorpsfinal.activity.Sheet10;
 import com.example.user.mercycorpsfinal.activity.Sheet11;
 import com.example.user.mercycorpsfinal.activity.Sheet12;
-import com.example.user.mercycorpsfinal.activity.Sheet3;
 import com.example.user.mercycorpsfinal.activity.Sheet6;
 import com.example.user.mercycorpsfinal.activity.Sheet7;
 import com.example.user.mercycorpsfinal.activity.Sheet8;

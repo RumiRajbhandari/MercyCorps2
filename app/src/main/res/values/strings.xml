@@ -5,6 +5,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">Map</string>
     <string name="txt">lhNnf b}=k|=p=;ldlt÷lhNnf k|zf;g sfof{no</string>
+    <string name="title">EWS Pocket Diary</string>
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
     <string name="sheet4_str">विषय क्षेत्रको अगुवा तथा सहयोगी संस्थाको सूचि</string>
@@ -25,7 +26,9 @@
     <string name="sheet19_str">प्राथमिक उपचार कार्यदल(नेपाल रेडक्रस सोसाइटी द्वारा गठित गा.वि.स. तथा नगरपालिका स्तरिय कार्यदलहरुको सम्पर्क विवरण)</string>
     <string name="sheet20_str">खोज तथा उद्धार कार्यदल( नेपाल रेडक्रस सोसाइटी द्वारा गठित गा.वि.स. तथा नगरपालिका स्तरिय कार्यदलहरुको सम्पर्क विवरण)</string>
     <string name="sheet21_str">पूर्व सूचना प्रणाली कार्यदल(नेपाल रेडक्रस सोसाइटी द्वारा गठित गा.वि.स. तथा नगरपालिका स्तरिय कार्यदलहरुको सम्पर्क विवरण)</string>
+    <string name="sheet25_str">वाढी प्रभावित समुदायका CDMC/WDMC हरुको सम्पर्क बिवरण</string>
     <string-array name="list">
+
         <item>@string/sheet4_str</item>
         <item>@string/sheet5_str</item>
         <item>@string/sheet6_str</item>
@@ -46,6 +49,7 @@
         <item>@string/sheet19_str</item>
         <item>@string/sheet20_str</item>
         <item>@string/sheet21_str</item>
+        <item>@string/sheet25_str</item>
 
     </string-array>
 </resources>

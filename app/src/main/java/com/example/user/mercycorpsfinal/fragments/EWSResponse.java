@@ -22,7 +22,7 @@ import com.example.user.mercycorpsfinal.activity.Sheet18;
 import com.example.user.mercycorpsfinal.activity.Sheet19;
 import com.example.user.mercycorpsfinal.activity.Sheet20;
 import com.example.user.mercycorpsfinal.activity.Sheet21;
-import com.example.user.mercycorpsfinal.activity.Sheet3;
+import com.example.user.mercycorpsfinal.activity.Sheet25;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -88,6 +88,10 @@ public class EWSResponse extends Fragment {
                     case 8 :intent = new Intent(getActivity(), Sheet21.class);
                         startActivity(intent);
                         break;
+                    case 9:intent = new Intent(getActivity(), Sheet25.class);
+                        startActivity(intent);
+                        break;
+//                    case 9:intent=new Intent(getActivity(),Sheet)
 
 
 

@@ -68,5 +68,9 @@ public interface MercyCorpInterface {
     Call<List<ListItem>> getList26();
     @GET("sheet27.json")
     Call<List<ListItem>> getList27();
+    @GET("sheet25.json")
+    Call<List<ListItem>> getList25();
+
+
 
 }

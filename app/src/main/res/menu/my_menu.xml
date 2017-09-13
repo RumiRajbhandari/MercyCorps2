@@ -19,15 +19,19 @@
             android:id="@+id/apatkalin"
             android:icon="@drawable/ic_note_black_24dp"
             android:title="मानवीय सहायतामा संलग्न निकाय"/>
+        <item
+            android:id="@+id/dhmTollFree"
+            android:icon="@drawable/callall"
+            android:title="DHM Toll Free"/>
 
         <item
         android:icon="@drawable/ic_assignment_black_24dp"
-        android:title="Communication Channel"
+        android:title="सूचना संयंन्त्र"
         android:id="@+id/commCha"
         />
         <item
             android:icon="@drawable/ic_cloud_queue_black_24dp"
-            android:title="Threshold Level"
+            android:title="चेतावनी र खतरा तह "
             android:id="@+id/threshold"
             />
     </group>

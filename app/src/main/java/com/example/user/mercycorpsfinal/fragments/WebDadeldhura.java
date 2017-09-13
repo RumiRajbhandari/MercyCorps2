@@ -1,45 +1,16 @@
 package com.example.user.mercycorpsfinal.fragments;
 
 
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTabHost;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.example.user.mercycorpsfinal.R;
-import com.example.user.mercycorpsfinal.VolleySingleton;
-import com.example.user.mercycorpsfinal.activity.DetailActivity;
-import com.example.user.mercycorpsfinal.adapter.CustomAdapterList;
-import com.example.user.mercycorpsfinal.adapter.FragmentAdapter;
-import com.example.user.mercycorpsfinal.database.DatabaseHandler;
-import com.example.user.mercycorpsfinal.model.ListItem;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONArray;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.

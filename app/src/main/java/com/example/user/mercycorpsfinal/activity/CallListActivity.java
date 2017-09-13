@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.user.mercycorpsfinal.R;
@@ -21,6 +22,7 @@ public class CallListActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private CallListAdapter cAdapter;
     TextView gauge, river,basedon,location;
+    Toolbar toolbar;
 
 
     @Override
@@ -31,10 +33,15 @@ public class CallListActivity extends AppCompatActivity {
         river=(TextView)findViewById(R.id.river);
         location=(TextView)findViewById(R.id.location);
         basedon=(TextView)findViewById(R.id.based);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>मर्सी कोर</font>"));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         latLon = new LatLon();
 
